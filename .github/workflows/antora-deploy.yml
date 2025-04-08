@@ -29,8 +29,6 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - name: npm config
-        run: npm config list
       - name: Install Dependencies
         run: npm install
       - name: Generate Site
