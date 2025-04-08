@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          registry-url: https://registry.npmjs.org
       - name: npm config
         run: npm config list
       - name: Install Dependencies
