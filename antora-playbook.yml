@@ -1,7 +1,7 @@
 ---
 site:
   title: Compress4J
-  url: https://dgc-core.docs.collibra.dev
+  url: https://compress4j.github.io
   start_page: compress4j::index.adoc
   robots: allow
 
