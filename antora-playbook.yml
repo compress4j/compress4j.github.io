@@ -19,9 +19,13 @@ runtime:
 content:
   sources:
     - url: https://github.com/compress4j/compress4j.git
+      tags:
+        - v2.1.2
       branches:
         - HEAD
-      version: true
+      version:
+        v(?<version>+({0..9}).+({0..9}).+({0..9})): $<version>
+        main: unstable
       start_path: docs
 ui:
   bundle:
