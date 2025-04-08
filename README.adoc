@@ -9,5 +9,5 @@ This is an https://antora.org/[Antora] documentation website, available at https
 
 == Usage
 
-. `make preview` to launch a "live preview" version of the documentation.
+. `make serve` to launch a "live preview" version of the documentation.
 

@@ -1,7 +1,7 @@
 ROOT_DIR=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 # Rule to build everything after cleaning
-all:	install	clean	ui	antora
+all:	install	clean build serve
 
 # Rule to install dependencies
 install:
@@ -13,12 +13,14 @@ clean:
 	rm -rf build
 
 # Rule to build the Antora documentation
-antora:
+build:
 	@echo "Building documentation"
 	cd $(ROOT_DIR) && npm i
 	cd $(ROOT_DIR) && npx antora --fetch local-antora-playbook.yml
-	cd $(ROOT_DIR) && npx http-server build/site -c-1
-	@echo "Antora site is up"
+
+serve:
+	@echo "Serving documentation"
+	cd $(ROOT_DIR) && npx serve build/site
 
 # Rule to show help message
 help:
