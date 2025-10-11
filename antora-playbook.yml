@@ -4,6 +4,9 @@ site:
   url: https://compress4j.github.io
   start_page: compress4j::index.adoc
   robots: allow
+  display_version_order:
+    - "*"
+    - unstable
 
 # see https://docs.antora.org/antora/2.3/playbook/configure-runtime/
 runtime:
@@ -18,9 +21,11 @@ runtime:
 
 content:
   sources:
-    - url: https://github.com/compress4j/compress4j.git
+    - url: ../compress4j
       tags:
-        - v2.1.2
+        - v2.1.1[0-9] # Matches 2.1.10 through 2.1.19
+        - v2.[2-9].* # Matches 2.2.x, 2.3.x, etc.
+        - v[3-9].*.* # Matches 3.0.0 and above
       branches:
         - HEAD
       version:
@@ -54,7 +59,7 @@ asciidoc:
     kroki-default-format: svg
     # Make SVG inline so that we can get interactive (can be overridden by schema with "opts=none")
     kroki-default-options: interactive
-  # Only enable for preview, we don't care for production and it can have performance impacts
+  # Only enable for preview, not needed for production, it can have performance impact
   # https://docs.antora.org/antora/latest/playbook/asciidoc-sourcemap/
 #  sourcemap: false
   extensions:
