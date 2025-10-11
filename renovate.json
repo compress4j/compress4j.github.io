@@ -1,6 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "baseBranches": [
+    "main"
+  ],
+  "branchPrefix": "renovate-",
+  "dependencyDashboard": false,
   "extends": [
-    "config:recommended"
+    "config:base",
+    "config:semverAllMonthly",
+    ":automergeMinor"
+  ],
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "packageRules": [
+    {
+      "groupName": "Non-major dependency updates",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchManagers": [
+        "github-actions",
+        "gradle-wrapper"
+      ],
+      "groupName": "gradle and github actions"
+    },
+    {
+      "matchDepTypes": [
+        "plugin"
+      ],
+      "groupName": "gradle and github actions"
+    }
   ]
 }
