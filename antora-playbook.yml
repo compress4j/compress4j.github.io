@@ -18,9 +18,17 @@ runtime:
 
 content:
   sources:
-    - url: ../compress4j
+#    - url: ../compress4j
+    - url: https://github.com/compress4j/compress4j.git
       tags:
-        - v2.1.3
+        - v2.1.13
+        - v2.4.*
+        - v2.5.*
+        - v2.6.*
+        - v2.7.*
+        - v2.8.*
+        - v2.9.*
+        - v3.*.*
       branches:
         - HEAD
       version:
