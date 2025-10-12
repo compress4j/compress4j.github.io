@@ -21,7 +21,7 @@ content:
 #    - url: ../compress4j
     - url: https://github.com/compress4j/compress4j.git
       tags:
-        - v2.1.13
+        - v2.1.14
         - v2.4.*
         - v2.5.*
         - v2.6.*
