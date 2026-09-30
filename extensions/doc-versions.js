@@ -10,7 +10,10 @@ const parseRelease = (refname) => {
 // 0.x minors can break each other, so they each count as a major line.
 const lineOf = ([major, minor]) => (major > 0 ? `${major}` : `0.${minor}`)
 
-const isNewer = (a, b) => a.some((part, i) => part !== b[i] && part > b[i])
+const isNewer = (a, b) => {
+  const i = a.findIndex((part, idx) => part !== b[idx])
+  return i !== -1 && a[i] > b[i]
+}
 
 const reftypeOf = (bundle) => bundle.origins[0].reftype
 
