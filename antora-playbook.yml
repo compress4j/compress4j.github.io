@@ -21,15 +21,13 @@ content:
 #    - url: ../compress4j
     - url: https://github.com/compress4j/compress4j.git
       tags:
-        - v2.2.*
-        - v2.3.*
-        - v2.4.*
-        - v2.5.*
-        - v2.6.*
-        - v2.7.*
-        - v2.8.*
-        - v2.9.*
-        - v3.*.*
+        - 'v*.*.*'
+        - '!v*-*'
+        # No docs/ before v2.1.2, and Antora fails on a tag without it.
+        - '!v0.*'
+        - '!v1.*'
+        - '!v2.0.*'
+        - '!v2.1.*'
       branches:
         - HEAD
       version:
@@ -38,11 +36,12 @@ content:
       start_path: docs
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: https://github.com/compress4j/docs-ui-bundle/releases/download/latest/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 antora:
   extensions:
+    - require: ./extensions/doc-versions.js
     - require: '@antora/lunr-extension'
 
 output:
