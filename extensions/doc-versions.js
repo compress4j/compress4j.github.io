@@ -4,7 +4,7 @@ const RELEASE_TAG_RX = /^v?(\d+)\.(\d+)\.(\d+)$/
 
 const parseRelease = (refname) => {
   const match = RELEASE_TAG_RX.exec(refname)
-  return match && match.slice(1).map(Number)
+  return match?.slice(1).map(Number)
 }
 
 // 0.x minors can break each other, so they each count as a major line.
@@ -24,7 +24,7 @@ const asRelease = (bundle, line) =>
   Object.assign(bundle, { version: `${line}.x`, displayVersion: `${line}.x`, prerelease: undefined })
 
 const releaseOf = (bundle) => {
-  const parts = reftypeOf(bundle) === 'tag' && parseRelease(bundle.origins[0].refname)
+  const parts = reftypeOf(bundle) === 'tag' ? parseRelease(bundle.origins[0].refname) : undefined
   return parts ? { bundle, parts, key: `${bundle.name}@${lineOf(parts)}` } : undefined
 }
 
@@ -46,8 +46,8 @@ function register({ config: { unversioned = [] } }) {
     const kept = new Set([...releases.values()].map(({ bundle }) => bundle))
     versioned.filter((bundle) => reftypeOf(bundle) === 'branch').forEach(asNext)
     releases.forEach(({ bundle, parts }) => asRelease(bundle, lineOf(parts)))
-    const dropped = versioned.filter((bundle) => reftypeOf(bundle) === 'tag' && !kept.has(bundle))
-    contentAggregate.splice(0, contentAggregate.length, ...contentAggregate.filter((b) => !dropped.includes(b)))
+    const dropped = new Set(versioned.filter((bundle) => reftypeOf(bundle) === 'tag' && !kept.has(bundle)))
+    contentAggregate.splice(0, contentAggregate.length, ...contentAggregate.filter((b) => !dropped.has(b)))
   })
 }
 
