@@ -49,6 +49,7 @@ output:
 
 asciidoc:
   attributes:
+    page-layout: with_menu
     idprefix: ''
     idseparator: '-'
     page-pagination: ''
