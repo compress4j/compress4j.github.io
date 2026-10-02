@@ -1,0 +1,33 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --card: #f4f4f5;
+  --link: #0b5fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111113;
+    --fg: #ececec;
+    --muted: #a0a0a8;
+    --card: #1c1c20;
+    --link: #7aa7ff;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main, footer { max-width: 44rem; margin: 0 auto; padding: 0 16px; }
+main { padding-top: 4rem; }
+h1 { font-size: 2.5rem; margin: 0; }
+.lead { color: var(--muted); font-size: 1.125rem; margin-top: 0.25rem; }
+.projects { list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 2.5rem; }
+.projects li { background: var(--card); border-radius: 8px; padding: 1rem 1.25rem; }
+.projects h2 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+.projects p { margin: 0.25rem 0; }
+a { color: var(--link); }
+footer { padding-top: 3rem; padding-bottom: 3rem; color: var(--muted); }

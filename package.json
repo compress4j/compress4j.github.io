@@ -1,9 +1,9 @@
 {
-  "name": "compress4j-documentation",
+  "name": "hominux-site",
   "version": "1.0.0",
-  "description": "Builds the documentation site for the Compress4j organization",
+  "description": "Builds the documentation site and home page for the Hominux organization",
   "scripts": {
-    "build": "antora --fetch antora-playbook.yml",
+    "build": "antora --fetch antora-playbook.yml && cp -r home/. build/site/",
     "serve": "serve build/site"
   },
   "devDependencies": {

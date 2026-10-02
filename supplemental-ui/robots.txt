@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://compress4j.github.io/sitemap.xml
