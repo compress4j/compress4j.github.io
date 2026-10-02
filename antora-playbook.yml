@@ -28,6 +28,9 @@ content:
         - '!v1.*'
         - '!v2.0.*'
         - '!v2.1.*'
+        # v4.0.0 and v4.0.1 declare `version: ~`, which makes Antora merge them into one version.
+        - '!v4.0.0'
+        - '!v4.0.1'
       branches:
         - HEAD
       version:
