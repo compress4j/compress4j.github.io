@@ -1,7 +1,7 @@
 ---
 site:
-  title: Compress4J
-  url: https://compress4j.github.io
+  title: Hominux Docs
+  url: https://hominux.com/docs
   start_page: compress4j::index.adoc
   robots: allow
 
@@ -19,7 +19,7 @@ runtime:
 content:
   sources:
 #    - url: ../compress4j
-    - url: https://github.com/compress4j/compress4j.git
+    - url: https://github.com/hominux/compress4j.git
       tags:
         - 'v*.*.*'
         - '!v*-*'
@@ -36,7 +36,7 @@ content:
       start_path: docs
 ui:
   bundle:
-    url: https://github.com/compress4j/docs-ui-bundle/releases/download/latest/ui-bundle.zip
+    url: https://github.com/hominux/docs-ui-bundle/releases/download/latest/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 antora:
@@ -45,6 +45,7 @@ antora:
     - require: '@antora/lunr-extension'
 
 output:
+  dir: ./build/site/docs
   clean: true
 
 asciidoc:

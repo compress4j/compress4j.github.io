@@ -16,7 +16,7 @@ clean:
 build:
 	@echo "Building documentation"
 	cd $(ROOT_DIR) && npm i
-	cd $(ROOT_DIR) && npx antora --fetch antora-playbook.yml
+	cd $(ROOT_DIR) && npm run build
 
 serve:
 	@echo "Serving documentation"

@@ -1,13 +1,12 @@
-= Compress4J Documentation
+= Hominux Site
 
-This is an https://antora.org/[Antora] documentation website, available at https://compress4j.github.io.
+Home page and https://antora.org/[Antora] documentation for the Hominux projects, published at https://hominux.com and https://hominux.com/docs.
 
-== Basic Antora Setup
+== Layout
 
-* The documentation pages are stored in the `docs/modules/ROOT/pages` folder.
-* Images are stored in the `docs/modules/ROOT/assets/images` folder.
+* `home/` holds the static home page, served at the site root.
+* `antora-playbook.yml` builds the documentation into `build/site/docs`.
 
 == Usage
 
-. `make serve` to launch a "live preview" version of the documentation.
-
+. `make` installs, builds and serves the site from `build/site`.
