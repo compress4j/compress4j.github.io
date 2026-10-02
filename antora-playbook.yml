@@ -34,6 +34,10 @@ content:
         v(?<version>+({0..9}).+({0..9}).+({0..9})): $<version>
         main: 0.0.0-dev
       start_path: docs
+    - url: https://github.com/hominux/pact-avro-plugin.git
+      branches:
+        - HEAD
+      start_path: docs
 ui:
   bundle:
     url: https://github.com/hominux/docs-ui-bundle/releases/download/latest/ui-bundle.zip
